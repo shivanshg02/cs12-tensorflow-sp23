@@ -142,6 +142,8 @@ The labs are due at the following times each term:
  
 At the start of term, I'll send out exact due dates.
 
+You are also allowed to drop one of the labs. The rest must be completed to pass.
+
 ## Collaboration policy, honor code
 Feel free to collaborate on concepts, algorithms, etc, but please don't share code in any way.
 This includes looking up code snippets that do what you're trying to do.
