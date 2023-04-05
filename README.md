@@ -55,7 +55,7 @@ You should do this setup before the first lab.
 
 For this class, we'll using Python 3.
 The easiest way to complete the setup is in a virtual environment, which I walk you through below.
-Note that TensorFlow currently _only supports Python 3.5-3.8_, so I will assume you have one of those versions installed, with pip set up correctly.
+Note that TensorFlow currently _only supports Python 3.8-3.11_, so I will assume you have one of those versions installed, with pip set up correctly.
 I'm also assuming you're setting this up on a standard Linux system.
 If not, proceed carefully.
 
@@ -67,26 +67,32 @@ If you're having trouble, you can try:
 
 #### Virtual environments
 Virtual environments simulate a "clean" Python install on your system so you don't need to worry about library conflicts and dependency issues.
-Therefore I recommend dedicating a virtual environment to this class.
-First, install virtualenv and virtualenvwrapper:
+Therefore I recommend dedicating a virtual environment to this class. Previously, we would use virtualenv, but I decided to switch over to conda this year. 
+
+To install conda on your machine, you will need to download it from [here](https://www.anaconda.com/products/distribution). 
+
+Once the installation is complete, you will want to create your virtual environment. You can do this using GUI (anaconda navigator) or the terminal. To access the GUI, type the following in your terminal.
 ~~~
-pip install virtualenv
-pip install virtualenvwrapper
+anaconda-navigator
 ~~~
-[You might want to do additional setup here](http://roundhere.net/journal/virtualenv-ubuntu-12-10/).
-Then, create and check the virtual environment:
+From here, you can create an environment and select 3.8-3.11 as the version of Python you will be using.
+
+You can also create your environment using the terminal and type the following
 ~~~
-mkvirtualenv -p /usr/bin/python3.6 cs12-tensorflow  # Point to the Python binary you'll be using
-workon cs12-tensorflow
-python --version  # Should print "Python 3.x.y" where x is 5, 6, 7, or 8
+conda create -n cs12-tensorflow python=3.8 # version of python you will use
 ~~~
-To activate the environment, use `workon cs12-tensorflow`.
-To deactivate it when you're done, use `deactivate`.
+You can then activate and check the virtual environment:
+~~~
+conda activate cs12-tensorflow 
+python --version  # Should print "Python 3.x.y" where x is 8, 9, 10, or 11
+~~~
+To activate the environment, use `conda activate cs12-tensorflow`.
+To deactivate it when you're done, use `conda deactivate`.
 
 #### Required libraries
 Once you're in the virtual environment, run
 ~~~
-pip install numpy==1.18.4 scipy matplotlib ipython jupyter pandas scikit-learn tensorflow==2.2.1 keras
+pip install numpy==1.23.5 scipy matplotlib ipython jupyter pandas scikit-learn tensorflow==2.12.0 keras
 ~~~
 Then, try running `python -c "import tensorflow"` in your shell.
 If the line executes successfully (printing nothing), your setup is probably fine.
